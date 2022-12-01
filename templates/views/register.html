@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+ 
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style>
+		input:valid{
+			background-color:aliceblue;;
+		}
+		input:invalid{
+			background-color:palevioletred;;
+		}	
+
+		/*input:enabled{
+			background-color:deeppink;;
+		}*/	
+		input:disabled{
+			background-color:springgreen;;
+		}	
+		
+		body{
+			background-color:beige;
+			background-image: url('https://wallpapercave.com/dwp1x/wp2036897.jpg');
+		}
+	</style>
+</head>
+<body>
+	<section class="text-center text-lg-start">
+		<style>
+		  .cascading-right {
+			margin-right: -50px;
+		  }
+	  
+		  @media (max-width: 991.98px) {
+			.cascading-right {
+			  margin-right: 0;
+			}
+		  }
+		</style>
+
+		
+	  
+		<!-- Jumbotron -->
+		<div class="container py-4">
+		  <div class="row g-0 align-items-center">
+			<div class="col-lg-8 mb-5 mb-lg-0">
+			  <div class="card cascading-right" style="
+				  background: hsla(0, 0%, 100%, 0.55);
+				  backdrop-filter: blur(30px);
+				  ">
+				<div ng-app="ang" ng-controller="angctr" class="card-body p-5 shadow-5 text-center">
+				  <h2 class="fw-bold mb-5">AjaanVriksha Registrations</h2>
+				  <form action="/register" method="POST">
+					<div class="row">
+					  <div class="col-md-6 mb-4">
+						<div class="form-outline">
+						  <input type="text" id="firstname" class="form-control" name="firstname" ng-model="uname"/>
+						  <label class="form-label" for="form3Example1">First name</label><br>
+						  
+						</div>
+					  </div>
+					  <div class="col-md-6">
+						<div class="form-outline">
+						  <input type="text" id="lastname" class="form-control" name="lastname" ng-model="lname"/>
+						  <label class="form-label" for="form3Example2">Last name</label>
+						</div>
+					  </div>
+					</div>
+					<h5>Welcome to AjaanVriksha {{uname}} {{lname}}</h5><br><br>
+					<div class="form-outline">
+						<input type="email" id="email" pattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$" class="form-control" name="email" />
+						<label class="form-label" for="form3Example3" >Email address</label>
+					</div>
+					<div class="form-outline mb-4">
+						<input type="text" id="password" pattern="[0-9|$|*]{4}" title="Password not valid" class="form-control" name="password" />
+						<label class="form-label" for="form3Example4">Password</label>
+					</div>
+					<div class="form-outline mb-4">
+						<input type="text" id="password" pattern="[0-9|$|*]{4}" title="Password not valid" class="form-control" name="confirmpassword" />
+						<label class="form-label" for="form3Example4">Confirm Password</label>
+					</div>
+					<div class="col-md-6 mb-4">
+						<div class="form-outline">
+						  <input type="text" id="role" class="form-control" name="role" ng-model="roles" />
+						  <label class="form-label" for="form3Example2">Role Selection</label>
+						  <h6>You've selected {{roles}} as your role</h6>
+						</div>
+					  </div>
+					</div>
+					<button type="submit" class="btn btn-primary btn-block mb-4" value="register">
+					  Sign up
+					</button>					
+				  </form>
+				  <script>
+					var app=angular.module('ang',[]);
+					app.controller('angctr',function($scope){
+						$scope.status=true;
+						$scope.x=11;
+						$scope.count=0;
+						$scope.count1=0;
+						$scope.myFunction=function(){
+							$scope.status=!$scope.status;
+						};
+					});
+				</script>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	  </section>
+</body>
+</html>
